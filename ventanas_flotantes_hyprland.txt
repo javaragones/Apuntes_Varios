@@ -1,0 +1,19 @@
+VENTANAS FLOTANTES EN HYPRLAND
+==============================
+
+Hyprland es un administrador de ventanas dinámico, lo que significa que puedes usarlo como un administrador de ventanas en mosaico o flotante. El archivo de configuración predeterminado tiene una combinación de teclas para alternar entre el modo de ventana flotante presionando SUPER y la tecla V. Aunque es muy molesto alternar el modo flotante para cada ventana nueva pasando el ratón por encima y presionando SUPER y la tecla V, puedes simplemente agregar esta línea en algún lugar de tu archivo de configuración de Hyprland ("~/.config/hypr/hyprland.conf") -
+
+windowrulev2 = float, class:.*
+
+Esto hará que todas las nuevas ventanas se conviertan automáticamente en flotantes de forma predeterminada en lugar de en mosaico.
+
+Por barra de estado, creo que te refieres a barras de estado como Waybar, Polybar y cosas así, ¿verdad? Recomiendo Waybar para la barra de estado en Wayland, ya que es bastante fácil de configurar usando CSS y cosas así. Puedes ver este video https://www.youtube.com/watch?v=oUpvtCEGrxQ es una buena introducción a cómo personalizar Waybar. Por cierto, Wayland es un servidor de visualización, no una barra de estado y no tengo ni idea de qué es Dock.
+
+Soy bastante nuevo en Hyprland y solo lo he usado durante un par de días, pero es realmente fácil de usar en mi opinión.
+
+No sé nada sobre las barras de ventanas (botones de maximizar, minimizar y cerrar), sin embargo. Voy a hacer una investigación independiente sobre cómo hacerlo, así que hasta entonces, tal vez puedas usar estas combinaciones de teclas para cerrar ventanas y alternar la pantalla completa para una ventana -
+
+bind = $mainMod, F, fullscreen
+bind = $mainMod, Q, killactive
+
+Por supuesto, puedes cambiar la combinación de teclas para estas acciones. Intentaré encontrar cómo obtener barras de ventanas y volveré para darte la respuesta, así que por ahora, espero que esto sea suficiente.

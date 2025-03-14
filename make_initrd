@@ -1,0 +1,2 @@
+mkinitrd -F -c -k 6.10.12 -s /boot/initrd-6.10.12 -o /boot/initrd-6.10.12-generic.img
+
