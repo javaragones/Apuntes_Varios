@@ -1,0 +1,2 @@
+( cd /var/log/packages/ ; grep -x 'U.*M' * ) | awk -F: '{print $3 "\t" $1}' | sort -n
+

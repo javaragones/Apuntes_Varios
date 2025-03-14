@@ -1,0 +1,10 @@
+
+CURSOR EN GOGGLE-CHROME O CHROMIUM EN WAYLAND.
+====================================
+
+Si se ejecuta en wayland, google-chrome no gestiona bien el cursor de mouse.
+Se debe ejecutar:
+
+google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+Fuente: https://forum.garudalinux.org/t/chromium-wayland-mouse-issues/22788/9
