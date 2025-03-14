@@ -1,0 +1,27 @@
+GUIA RÁPIDA PARA AÑADIR ICONOS O GRÁFICOS EN JSON.
+==================================================
+
+Fuente:
+https://github.com/ryanoasis/nerd-fonts/wiki/FAQ-and-Troubleshooting
+
+Algunas fuentes como FontAwesome o SysmbolsNerdFont tienen simbolos o iconos que pueden ser agregados.
+
+Para agregar iconos en json o usarlos en terminal, se pueden buscar en el sitio de Nerd Font o bien usar una aplicación como gucharmap al instalarlas.
+
+Web: https://www.nerdfonts.com/cheat-sheet
+
+En esta aplicación aparecen todas las fuentes y podemos visualizar cada una y los detalles de cada una.
+Por ejemplo   corresponde el códifo UF1FA. Es el primer código que aparece. Luego podemos arrastrar al documento /como hice aqui) o bien visualizarlo escribiendo en el prompt:
+
+echo $'\uf1fa', será 
+ 
+echo $'\uf232', será 
+
+En el archivo jsonc directamente se escribe el código, por ejemplo:
+
+"format": " 󰖩  \uf1eb {}" 
+
+En este caso se veran dos iconos, uno mas chico que el segundo.
+
+
+

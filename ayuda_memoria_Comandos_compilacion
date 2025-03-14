@@ -1,0 +1,86 @@
+** Usando configure.
+
+Aqui se pueden agregar opciones según lo indicado en la web de la aplicación.
+
+./configure \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \  # /usr/lib64
+  --sysconfdir=/etc \
+  --localstatedir=/var \
+  --mandir=/usr/man \
+  --docdir=/usr/doc/$PRGNAM-$VERSION
+  
+make
+make install DESTDIR=$PKG
+
+PKG define el directorio para formar el paquete.
+
+** Usando autogen.sh y make.
+
+./autogen.sh \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --sysconfdir=/etc \
+  --localstatedir=/var \
+  --mandir=/usr/man \
+  --docdir=/usr/doc/$PRGNAM-$VERSION 
+  
+make
+make install DESTDIR=$PKG
+
+
+** Usando meson, primera versión.
+
+mkdir build
+cd build
+
+Los dos puntos (..) definen el directorio anterior.
+
+meson setup .. \
+    --buildtype=release \
+    --infodir=/usr/info \
+    --libdir=/usr/lib${LIBDIRSUFFIX} \
+    --localstatedir=/var \
+    --mandir=/usr/man \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    -Dstrip=true
+
+  "${NINJA:=ninja}"
+  DESTDIR=$PKG $NINJA install
+
+Vuelve al directrio anterior para copiar algunos archivos como README, etc.
+
+cd .. 
+
+
+** Usando meson, segunda opción.
+
+mkdir build
+
+Lo básico sería "meson setup build/".
+
+meson setup \
+  --buildtype=release \
+  --infodir=/usr/info \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --localstatedir=/var \
+  --mandir=/usr/man \
+  --prefix=/usr \
+  --sysconfdir=/etc \
+  build/
+
+Se trabaja desde el directorio origen, pero se le dice a nnja que todo esta en el directorio build/.
+
+ninja -v -C build/  
+DESTDIR=$PKG ninja -v -C build/ install
+
+
+** Usando cmake.
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr -GNinja ..
+
+cmake --build .
+DESTDIR=$PKG cmake --install . 
+cd ..
+

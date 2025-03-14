@@ -1,0 +1,14 @@
+Guia rápida para iniciar pipewire en slackware.
+===============================================
+
+Para iniciar pipewire, se agrega al script de inicio de Hyprland y sway, lo siguiente:
+
+/usr/bin/daemon -rB --pidfiles=~/.run --name=pipewire /usr/bin/pipewire 
+/usr/bin/daemon -rB --pidfiles=~/.run --name=pipewire-pulse /usr/bin/pipewire-pulse
+/usr/bin/daemon -rB --pidfiles=~/.run --name=wireplumber /usr/bin/wireplumber
+
+Luego se coloca la línea para iniciar el Window Manager:
+
+exec dbus-launch --sh-syntax --exit-with-session ( Hyprland o sway)
+
+Si se usa gestor de arranque como sddm, no hace falta agregarlo, ya que el window manager se inicia desde /usr/share/wayland-sessions y toma la configuración del sistema.
