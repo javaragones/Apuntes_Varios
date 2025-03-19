@@ -1,0 +1,13 @@
+Guia rápida para iniciar pipewire en slackware.
+===============================================
+
+Para iniciar pipewire, se agrega a la configuración de Hyprland y sway, MATE o XFCE el script pipe.sh
+con el siguiente contenido:
+
+----------------
+#!/bin/bash
+/usr/bin/daemon -rB --pidfiles=~/.run --name=pipewire /usr/bin/pipewire 
+/usr/bin/daemon -rB --pidfiles=~/.run --name=pipewire-pulse /usr/bin/pipewire-pulse
+/usr/bin/daemon -rB --pidfiles=~/.run --name=wireplumber /usr/bin/wireplumber
+
+-----------------
