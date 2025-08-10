@@ -1,0 +1,19 @@
+
+CURSOR EN GOGGLE-CHROME O CHROMIUM EN WAYLAND.
+===============================================
+
+Si se ejecuta en wayland, google-chrome no gestiona bien el cursor de mouse.
+Se debe ejecutar:
+
+google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+Fuente: https://forum.garudalinux.org/t/chromium-wayland-mouse-issues/22788/9
+
+ERROR EN CHROMIUM EN HYPRLAND EN ARCHLINUX
+===========================================
+
+En el caso de Archlinux, suele psar que chromium o chrome, no se muestra con los ajustes de gtk correctamente. Por ejemplo adwaita-dark.
+En este caso de agrega al comandO:
+
+chromium --ozone-platform-hint=auto
+
