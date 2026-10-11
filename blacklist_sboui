@@ -15,9 +15,9 @@
 #
 #=====================================================
 # This one will blacklist all Alien Bob packages
-[0-9]+alien
-[0-9]+_lngn
-[0-9]+
+[0-9]+alien   ## AlienBOB
+[0-9]+_lngn   ## Lanagam
+[0-9]+        ## slackware
 #=====================================================
 # This one would blacklist anything with "flash" in the name
 #(.*)flash(.*)
