@@ -1,0 +1,8 @@
+REPO LNGN: Utilidades para Slackware para compilar
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+https://codeberg.org/jlngn/slackaroni
+
+Se clona y se compila desde alli.
+
+Para actualizar, se usa git pull
