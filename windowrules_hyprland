@@ -1,0 +1,29 @@
+-- Opacity for inactive windows
+hl.window_rule({ match = { float = false, focus = false }, opacity = "0.9 0.9" })
+
+-- GNOME apps
+hl.window_rule({ match = { class = "^(org\\.gnome\\.)" }, border_size = 0, rounding = 12 })
+
+-- Terminal apps - no borders
+hl.window_rule({ match = { class = "^(org\\.wezfurlong\\.wezterm)$" }, border_size = 0 })
+hl.window_rule({ match = { class = "^(Alacritty)$" }, border_size = 0 })
+hl.window_rule({ match = { class = "^(zen)$" }, border_size = 0 })
+hl.window_rule({ match = { class = "^(com\\.mitchellh\\.ghostty)$" }, border_size = 0 })
+hl.window_rule({ match = { class = "^(kitty)$" }, border_size = 0 })
+
+-- Floating windows
+hl.window_rule({ match = { class = "^(gnome-calculator)$" }, float = true })
+
+hl.window_rule({ match = { class = "^(blueman-manager)$" }, float = true })
+
+hl.window_rule({ match = { class = "^(org\\.gnome\\.Nautilus)$" }, float = true })
+
+-- Open DMS windows as floating by default (optional — DMS can manage this for you)
+hl.window_rule({ match = { class = "^(com\\.danklinux\\.dms)$" }, float = true })
+
+ENVIROMENTAL VARIABLES
+
+hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
+hl.env("QT_QPA_PLATFORMTHEME_QT6", "gtk3")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
